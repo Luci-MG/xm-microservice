@@ -232,20 +232,3 @@ For all authenticated requests, include the following header:
 ```bash
 Authorization: Bearer <JWT_TOKEN>
 ```
-
-## Troubleshooting
-
-- **Verify Docker Containers:**
-  ```bash
-  docker ps
-  ```
-
-- **Review Service Logs:**
-  ```bash
-  docker-compose logs
-  ```
-
-- **Database Connection Issues:** Ensure PostgreSQL is running and accessible with the credentials provided in `.env`.
-
-- **Kafka Issues:** Check Kafka broker logs for errors and ensure it is running on the configured port (`9092`).
-
