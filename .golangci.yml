@@ -1,0 +1,59 @@
+run:
+  timeout: 5m
+  tests: true
+
+output:
+  print-issued-lines: true
+  print-linter-name: true
+
+linters-settings:
+  errcheck:
+    check-type-assertions: true
+  gocyclo:
+    min-complexity: 15
+  dupl:
+    threshold: 100
+  goconst:
+    min-len: 3
+    min-occurrences: 3
+  misspell:
+    locale: US
+  lll:
+    line-length: 120
+  unparam:
+    check-exported: false
+
+linters:
+  enable:
+    - gofmt
+    - govet
+    - errcheck
+    - staticcheck
+    - gosimple
+    - ineffassign
+    - typecheck
+    - unused
+    - misspell
+    - gocyclo
+    - dupl
+    - goconst
+    - goimports
+    - bodyclose
+    - unconvert
+    - unparam
+    - whitespace
+  disable:
+    - wsl
+    - godox
+    - funlen
+
+issues:
+  max-same-issues: 3
+  new: false
+  exclude-rules:
+    - path: _test\.go
+      linters:
+        - gocyclo
+        - dupl
+        - gosec
+        - goconst
